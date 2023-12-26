@@ -18,7 +18,7 @@ st.markdown(
    """,
    unsafe_allow_html=True)
 
-def show(col, i):
+def show(col, i=int):
     col.header(f':grey[Matching {i}]')
     col.image(similar_img[i], width=280)
     col.subheader((round(score[i]*100),2) + '%')
