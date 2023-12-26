@@ -92,7 +92,7 @@ with tab1:
         st.write(result.shape)
         result = result.reshape((-1,10))
         result = np.flip(result)
-        similar_img, score = result[:10,0], result[:10,10]
+        similar_img, score = result[:10,0], result[:10,9]
         tab2.header("**LOOK AT THE :grey[**MATCHING RESULT**]**")
         my_bar.empty()
         col1, col2, col3, col4, col5 = tab2.columns(5)
