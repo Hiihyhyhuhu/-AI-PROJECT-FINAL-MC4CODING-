@@ -16,12 +16,12 @@ def local_css(file_name):
 local_css("style/style.css")
 
 col1, col2, col3 = st.columns([0.05, 0.9, 0.05])
-col2.image("style/heading1_1.JPG")
+col2.image("style/heading1_1.jpg")
 col1.write('~ '*80)
 col3.write('~ '*80)
 st.title(":grey[**FINDING ONE'S LOST - ONCE LOST**]")
 st.write("Your family as well as your friends are ***the most precious treasure*** you have ever had " + "-"*280 + " Let us carry out the mission to find out them")
-st.image('style/heading1_2.JPG')
+st.image('style/heading1_2.jpg')
 col1, col2, col3 = st.columns([0.5,0.25,0.25])
 with col1:
     st.subheader(":grey[WHO WE ARE...]")
@@ -37,9 +37,9 @@ with col2:
         st.subheader('Tien: Founder')
     with colC:
         st.write('')
-    st.image('style/anhTien.JPG', width=300)
+    st.image('style/anhTien.jpg', width=300)
 with col3:
-    st.image('style/anhHy.JPG', width=300)
+    st.image('style/anhHy.jpg', width=300)
     colA, colB, colC = st.columns([0.6,0.6,0.3])
     with colA:
         st.write('')
@@ -47,11 +47,11 @@ with col3:
         st.subheader('Hy: Co-Founder')
     with colC:
         st.write('')
-st.image('style/heading1_2.JPG')
+st.image('style/heading1_2.jpg')
 st.write('')
 col1, col2 = st.columns([0.5,0.6])
 with col1:
-    st.image('style/heading1_3.JPG')
+    st.image('style/heading1_3.jpg')
 with col2:
     st.title(':grey[CONTACT US] -----------')
     with st.expander('**FEEDBACK**', expanded=False):

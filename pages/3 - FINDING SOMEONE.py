@@ -24,7 +24,7 @@ def show(col, i):
     col.subheader((round(score[i]*100),2) + '%')
 
 col1, col2, col3 = st.columns([0.05, 0.9, 0.05])
-col2.image("style/heading3_1.JPG")
+col2.image("style/heading3_1.jpg")
 col1.write('~ '*80)
 col3.write('~ '*80)
 

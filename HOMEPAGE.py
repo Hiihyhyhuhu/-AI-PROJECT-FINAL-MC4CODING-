@@ -3,10 +3,10 @@ import base64
 
 st.set_page_config(page_title="HOMEPAGE", page_icon="👋", layout='wide')
 images = []
-for file in ["style/pic2.JPG", "style/pic3.JPG", "style/pic4.JPG"]:
+for file in ["style/pic2.jpg", "style/pic3.jpg", "style/pic4.jpg"]:
    with open(file, "rb") as image:
       encoded = base64.b64encode(image.read()).decode()
-      images.append(f"data:image/JPG;base64,{encoded}")
+      images.append(f"data:image/jpg;base64,{encoded}")
 st.header(":grey[**FINDING ONE'S LOST - ONCE LOST**]", help='Click on the sections below to get started.')
 col1, col2 = st.columns([0.45,0.55])
 with col1:
