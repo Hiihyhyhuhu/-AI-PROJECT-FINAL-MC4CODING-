@@ -1,4 +1,3 @@
-from streamlit_star_rating import st_star_rating
 import streamlit as st
 
 st.set_page_config(page_title="GET TO KNOW US", page_icon="🤝", layout='wide')
@@ -55,8 +54,6 @@ with col1:
     st.image('style/heading1_3.JPG')
 with col2:
     st.title(':grey[CONTACT US] -----------')
-    with st.expander('**RATING**', expanded=True):
-        stars = st_star_rating("", maxValue=5, defaultValue=0, key="rating")
     with st.expander('**FEEDBACK**', expanded=False):
         contact_form = """
             <form action="https://formsubmit.co/hychanhtran@gmail.com" method="POST">
