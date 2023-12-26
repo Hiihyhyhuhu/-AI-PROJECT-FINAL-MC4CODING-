@@ -3,3 +3,4 @@ google.generativeai
 replicate
 deepface
 numpy
+opencv-python-headless
