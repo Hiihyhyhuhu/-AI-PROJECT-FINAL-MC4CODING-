@@ -88,11 +88,11 @@ with tab1:
                 my_bar.progress(percent_complete + 1, text='Operation in progress. Please wait.')
             time.sleep(1)
         result = np.array(DeepFace.find(img_path = "style/sample_img.png", db_path = 'images', enforce_detection = False))
-        result = [things for things in items for items in result]
+        result = [things for items in result for things in items]
         st.write(result.shape)
         result = result.reshape((-1,10))
         result = np.flip(result)
-        similar_img, score = result[:10,0], result[:10,5]
+        similar_img, score = result[:10,0], result[:10,10]
         tab2.header("**LOOK AT THE :grey[**MATCHING RESULT**]**")
         my_bar.empty()
         col1, col2, col3, col4, col5 = tab2.columns(5)
