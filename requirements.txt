@@ -1,11 +1,5 @@
 streamlit
 google.generativeai
-urllib.request
 replicate
 deepface
-datetime
-random
-base64
 numpy
-time
-os
