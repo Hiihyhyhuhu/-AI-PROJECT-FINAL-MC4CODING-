@@ -87,8 +87,8 @@ with tab1:
                 time.sleep(0.01)
                 my_bar.progress(percent_complete + 1, text='Operation in progress. Please wait.')
             time.sleep(1)
-        result = np.array(DeepFace.find(img_path = "style/sample_img.png", db_path = 'images', enforce_detection = False))
-        result = [things for items in result for things in items]
+        result = DeepFace.find(img_path = "style/sample_img.png", db_path = 'images', enforce_detection = False)
+        result = np.array([things for items in result for things in items])
         st.write(result.shape)
         result = result.reshape((-1,10))
         result = np.flip(result)
