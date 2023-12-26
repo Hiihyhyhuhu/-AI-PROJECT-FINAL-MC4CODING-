@@ -1,5 +1,4 @@
 streamlit
-streamlit_star_rating
 google.generativeai
 urllib.request
 replicate
