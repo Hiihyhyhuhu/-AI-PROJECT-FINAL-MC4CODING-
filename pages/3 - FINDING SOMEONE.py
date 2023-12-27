@@ -22,7 +22,7 @@ st.markdown(
 def show(col, i=int):
     col.header(f':grey[Matching {i}]')
     col.image(similar_img[i], width=280)
-    scoreshow = round(score[i]*100),2
+    scoreshow = round(score[i]*100,2)
     col.subheader(scoreshow, '%')
 
 col1, col2, col3 = st.columns([0.05, 0.9, 0.05])
@@ -51,19 +51,19 @@ with tab1:
         colI.subheader('**ABOUT FACE** '+'-'*15)
         colII.subheader('**ABOUT HAIR** '+'-'*33)
         colA, colB, colC, colD = st.columns([0.2,0.2,0.3,0.3])
-        faceshape = colA.selectbox(f"***{pronounce} face shape:***", ['oval','square','round','diamond','heart'], index=None, placeholder='Choose a shape')
-        skin = colB.selectbox(f"***{pronounce} skin:***", ['bright','tan'], index=None, placeholder='Choose a shape')
-        hairlength = colC.selectbox(f'***{pronounce} hair length:***',['long','short','shoulderlength'], index=None, placeholder='Choose the length')
-        haircolor = colD.selectbox(f"***{pronounce} hair color:***",['black','blond', 'brown', 'white'], placeholder='Choose a color')
+        faceshape = colA.selectbox(f"***{pronounce} face shape:***", ['oval','square','round','diamond','heart'], index=None, placeholder='Choose a shape', key='shape')
+        skin = colB.selectbox(f"***{pronounce} skin:***", ['bright','tan'], index=None, placeholder='Choose skin', key='skin')
+        hairlength = colC.selectbox(f'***{pronounce} hair length:***',['long','short','shoulderlength'], index=None, placeholder='Choose the length', key='hairlength')
+        haircolor = colD.selectbox(f"***{pronounce} hair color:***",['black','blond', 'brown', 'white'], index=None, placeholder='Choose a color', key='haircolor')
 
         colI, colII = st.columns([0.4,0.5])
         colI.subheader('**ABOUT EYE** '+'-'*20)
         colII.subheader('**ABOUT NOSE** '+'-'*28)
         colA, colB, colC, colD = st.columns([0.3,0.3,0.4,0.3])
-        eyesize = colA.radio(f"***{pronounce} eye:***", ['small','big'], horizontal=True, index=None)
-        eyebrow = colB.radio(f"***{pronounce} eyebrow:***", ['thick','thin'], horizontal=True, index=None)
-        noseshape = colC.multiselect(f"***{pronounce} nose shape:***",['straight','pug','crooked','pointed'])
-        nosesize = colD.radio(f"***{pronounce} nose size:***",['big','small'], horizontal=True, index=None)
+        eyesize = colA.radio(f"***{pronounce} eye:***", ['small','big'], horizontal=True, index=None, key='eyesize')
+        eyebrow = colB.radio(f"***{pronounce} eyebrow:***", ['thick','thin'], horizontal=True, index=None, key='eyebrow')
+        noseshape = colC.multiselect(f"***{pronounce} nose shape:***",['straight','pug','crooked','pointed'], key='noseshape')
+        nosesize = colD.radio(f"***{pronounce} nose size:***",['big','small'], horizontal=True, index=None, key='nosesize')
         draw = st.form_submit_button('DRAW', type='primary', use_container_width = True)
         
     with col1:
