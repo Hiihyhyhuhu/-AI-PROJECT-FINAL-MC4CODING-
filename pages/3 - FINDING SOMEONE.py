@@ -32,7 +32,7 @@ col3.write('~ '*80)
 
 tab1, tab2, tab3 = st.tabs(["📝 GET TO KNOW","📬 FIND OUT", "⛑️ TIPS AND FACTS"])
 with tab1:
-    col2.title(":grey[**- REGCONITION: FINDING ONE'S LOST ~ ONCE LOST -**]")
+    col2.title(":grey[**- RECOGNITION: FINDING ONE'S LOST ~ ONCE LOST -**]")
     st.info("This is where you can find your relatives, friends and the identification of someone who needs help.")
     st.header(":grey[**GET TO KNOW WHO IS LOST**]")  
     
