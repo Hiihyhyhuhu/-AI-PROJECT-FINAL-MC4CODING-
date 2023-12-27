@@ -40,7 +40,7 @@ with tab1:
     with col2.form('description'):
         st.subheader('**PERSONAL INFORMATION**')
         colA, colB, colC = st.columns([0.25,0.4, 0.3], gap='small')
-        gender = colA.radio("***Biological gender:***", ["Boy","Girl"], horizontal=True, index=None)
+        gender = colA.radio("***Biological gender:***", ["Boy","Girl"], horizontal=True, index=None, key='gender')
         if gender == 'Boy': pronounce = 'His'
         elif gender == 'Girl': pronounce = 'Her'
         else: pronounce = 'The'
@@ -65,18 +65,19 @@ with tab1:
         noseshape = colC.multiselect(f"***{pronounce} nose shape:***",['straight','pug','crooked','pointed'], key='noseshape')
         nosesize = colD.radio(f"***{pronounce} nose size:***",['big','small'], horizontal=True, index=None, key='nosesize')
         draw = st.form_submit_button('DRAW', type='primary', use_container_width = True)
-    if draw:
-        des = f'realistic color portrait photo of {age} year olds {race} {gender} who has {skin} skin, {eyesize} eye, {eyebrow} eyebrow, {noseshape} nose, {hairlength} hair'
-        replicate = replicate.Client(api_token='r8_XoAyduGHWDjA6jgFvABGsXNBvN757qA27x6Lt')
-        output = replicate.run("stability-ai/stable-diffusion:27b93a2413e7f36cd83da926f3656280b2931564ff050bf9575f1fdf9bcd7478", input={"prompt": des})
-        urllib.request.urlretrieve(output[0], "style/sample_img.png")
-        imgshow = colA.image('style/sample_img.png', width=280)
 
     with col1:
         with st.form('find'):
             colA, colB = st.columns([0.55,0.4])
             header = colA.subheader('OUR SKETCH:')
             find = colB.form_submit_button('FIND NOW', type='primary', help='Click here to see what we imagine about the lost one.', use_container_width= True)
+
+    if draw:
+        des = f'realistic color portrait photo of {age} year olds {race} {gender} who has {skin} skin, {eyesize} eye, {eyebrow} eyebrow, {noseshape} nose, {hairlength} hair'
+        replicate = replicate.Client(api_token='r8_XoAyduGHWDjA6jgFvABGsXNBvN757qA27x6Lt')
+        output = replicate.run("stability-ai/stable-diffusion:27b93a2413e7f36cd83da926f3656280b2931564ff050bf9575f1fdf9bcd7478", input={"prompt": des})
+        urllib.request.urlretrieve(output[0], "style/sample_img.png")
+        imgshow = colA.image('style/sample_img.png', width=280)
 
     header = tab2.columns([0.32,0.8])[1].title('THERE IS NO RESULT YET')
     if find:
