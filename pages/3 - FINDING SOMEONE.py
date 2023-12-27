@@ -21,9 +21,9 @@ st.markdown(
 
 def show(col, i=int):
     col.header(f':grey[Matching {i}]')
-    col.image(similar_img[i], width=280)
+    col.image(similar_img[i], width=200)
     scoreshow = round(score[i]*100,2)
-    col.subheader(scoreshow, '%')
+    col.subheader(f'{scoreshow} %')
 
 col1, col2, col3 = st.columns([0.05, 0.9, 0.05])
 col2.image("style/heading3_1.jpg")
