@@ -44,26 +44,26 @@ with tab1:
         if gender == 'Boy': pronounce = 'His'
         elif gender == 'Girl': pronounce = 'Her'
         else: pronounce = 'The'
-        age = colB.number_input(f"***{pronounce} age:***", 0, 150)
-        race = colC.selectbox(f'***{pronounce} race:***', ['American','Asian','Indian','Middle Eastern','Latino Hispanic'], index=None, placeholder='Choose a race')
+        age = colB.number_input(f"***age:***", 0, 150)
+        race = colC.selectbox(f'***race:***', ['American','Asian','Indian','Middle Eastern','Latino Hispanic'], index=None, placeholder='Choose a race')
 
         colI, colII = st.columns([0.4,0.6])
         colI.subheader('**ABOUT FACE** '+'-'*15)
         colII.subheader('**ABOUT HAIR** '+'-'*33)
         colA, colB, colC, colD = st.columns([0.2,0.2,0.3,0.3])
-        faceshape = colA.selectbox(f"***{pronounce} face shape:***", ['oval','square','round','diamond','heart'], index=None, placeholder='Choose a shape', key='shape')
-        skin = colB.selectbox(f"***{pronounce} skin:***", ['bright','tan'], index=None, placeholder='Choose skin', key='skin')
-        hairlength = colC.selectbox(f'***{pronounce} hair length:***',['long','short','shoulderlength'], index=None, placeholder='Choose the length', key='hairlength')
-        haircolor = colD.selectbox(f"***{pronounce} hair color:***",['black','blond', 'brown', 'white'], index=None, placeholder='Choose a color', key='haircolor')
+        faceshape = colA.selectbox(f"***face shape:***", ['oval','square','round','diamond','heart'], index=None, placeholder='Choose a shape', key='shape')
+        skin = colB.selectbox(f"***skin:***", ['bright','tan'], index=None, placeholder='Choose skin', key='skin')
+        hairlength = colC.selectbox(f'***hair length:***',['long','short','shoulderlength'], index=None, placeholder='Choose the length', key='hairlength')
+        haircolor = colD.selectbox(f"***hair color:***",['black','blond', 'brown', 'white'], index=None, placeholder='Choose a color', key='haircolor')
 
         colI, colII = st.columns([0.4,0.5])
         colI.subheader('**ABOUT EYE** '+'-'*20)
         colII.subheader('**ABOUT NOSE** '+'-'*28)
         colA, colB, colC, colD = st.columns([0.3,0.3,0.4,0.3])
-        eyesize = colA.radio(f"***{pronounce} eye:***", ['small','big'], horizontal=True, index=None, key='eyesize')
-        eyebrow = colB.radio(f"***{pronounce} eyebrow:***", ['thick','thin'], horizontal=True, index=None, key='eyebrow')
-        noseshape = colC.multiselect(f"***{pronounce} nose shape:***",['straight','pug','crooked','pointed'], key='noseshape')
-        nosesize = colD.radio(f"***{pronounce} nose size:***",['big','small'], horizontal=True, index=None, key='nosesize')
+        eyesize = colA.radio(f"***eye:***", ['small','big'], horizontal=True, index=None, key='eyesize')
+        eyebrow = colB.radio(f"***eyebrow:***", ['thick','thin'], horizontal=True, index=None, key='eyebrow')
+        noseshape = colC.multiselect(f"***nose shape:***",['straight','pug','crooked','pointed'], key='noseshape')
+        nosesize = colD.radio(f"***nose size:***",['big','small'], horizontal=True, index=None, key='nosesize')
         draw = st.form_submit_button('DRAW', type='primary', use_container_width = True)
 
     with col1:
