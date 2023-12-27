@@ -90,7 +90,7 @@ with tab1:
             time.sleep(1)
         result = DeepFace.find(img_path = "style/sample_img.png", db_path = 'images', enforce_detection = False)
         result = result[0]
-        similar_img, score = result['identity'][10:], result['VGG-Face_cosine'][10:]
+        similar_img, score = result['identity'][10:].tolist(), result['VGG-Face_cosine'][10:].tolist()
         st.write(similar_img)
         st.write(type(similar_img))
 
