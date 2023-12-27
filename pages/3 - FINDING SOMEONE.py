@@ -91,7 +91,7 @@ with tab1:
         result = DeepFace.find(img_path = "style/sample_img.png", db_path = 'images', enforce_detection = False)
         result = result[0]
         st.write(result)
-        similar_img, score = result['identity'][10:], result['VGG-Face_cosine'][10:,9]
+        similar_img, score = result['identity'][10:], result['VGG-Face_cosine'][10:]
         tab2.header("**LOOK AT THE :grey[**MATCHING RESULT**]**")
         my_bar.empty()
         col1, col2, col3, col4, col5 = tab2.columns(5)
