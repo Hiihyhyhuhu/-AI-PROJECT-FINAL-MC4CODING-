@@ -88,7 +88,7 @@ with tab1:
                 my_bar.progress(percent_complete + 1, text='Operation in progress. Please wait.')
             time.sleep(1)
         result = DeepFace.find(img_path = "style/sample_img.png", db_path = 'images', enforce_detection = False)
-        st.write(len(result))
+        result = result[0]
         result = result.reshape((-1,10))
         result = np.flip(result)
         similar_img, score = result[:10,0], result[:10,9]
