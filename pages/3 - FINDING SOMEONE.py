@@ -22,7 +22,8 @@ st.markdown(
 def show(col, i=int):
     col.header(f':grey[Matching {i}]')
     col.image(similar_img[i], width=280)
-    col.subheader((round(score[i]*100),2) + '%')
+    scoreshow = round(score[i]*100),2
+    col.subheader(scoreshow, '%')
 
 col1, col2, col3 = st.columns([0.05, 0.9, 0.05])
 col2.image("style/heading3_1.jpg")
@@ -89,10 +90,8 @@ with tab1:
                 my_bar.progress(percent_complete + 1, text='Operation in progress. Please wait.')
             time.sleep(1)
         result = DeepFace.find(img_path = "style/sample_img.png", db_path = 'images', enforce_detection = False)
-        result = result[0]
+        result = result[0] #now, it's a dataframe
         similar_img, score = result['identity'][10:].tolist(), result['VGG-Face_cosine'][10:].tolist()
-        st.write(similar_img)
-        st.write(type(similar_img))
 
         tab2.header("**LOOK AT THE :grey[**MATCHING RESULT**]**")
         my_bar.empty()
