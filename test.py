@@ -5,7 +5,7 @@ import os
 
 os.remove("images/representations_vgg_face.pkl")
 result = np.array(DeepFace.find(img_path = "style/sample_img.png", db_path = 'images', enforce_detection = False))
-print(result)
+print(result.shape)
 
 # result = [things for items in result for things in items]
 # print(result)
